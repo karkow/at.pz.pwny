@@ -1,0 +1,13 @@
+logging:
+  level:
+    org.springframework.web: DEBUG
+    at.pz.pwny: DEBUG
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file: /home/pi/pwny/logs/pwny.log
+
+server:
+  tomcat:
+    basedir: tomcat
+    accesslog:
+      enabled: true

@@ -1,0 +1,288 @@
+body {
+ overflow-x: hidden;
+  margin-top: 70px;
+  margin-bottom: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #dadee8;
+}
+
+#mainheader {
+  background: url(/images/banner.png) center;
+  background-size: cover;
+}
+
+::selection {
+  background: #7682a5;
+}
+::-moz-selection {
+  background: #7682a5;
+}
+
+.bg-dark {
+  background-color: #070a13!important;
+}
+
+nav {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.name {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Oswald', sans-serif;
+}
+
+hr {
+  max-width: 50px;
+  border: 3px #3e4a6a;
+}
+header,
+section,
+footer {
+    margin: 0;
+    padding: 1px;
+}
+
+header {
+  padding: 8rem 0;
+}
+
+section {
+  padding: 6rem 0;
+}
+
+#news {
+  background-color: #131825;
+}
+
+#social {
+  background-color: #232a3f;
+}
+
+#progress {
+  background-color: #131825;
+}
+
+#join {
+  background-color: #232a3f;
+}
+footer {
+    background-color: #131825;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #343e5a;
+  border-color: #343e5a;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:active:focus, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff !important;
+  background-color: #586488 !important;
+  border-color: black !important;
+  outline: none;
+}
+
+a {
+  color: #6f7c9c;
+  outline: none;
+}
+
+a:link {
+  color: #6f7c9c;
+}
+
+a:visited {
+  color: #6f7c9c;
+}
+
+a:hover {
+  color: #6f7c9c;
+}
+
+a:active {
+  color: #6f7c9c;
+}
+
+button:focus {
+  outline:0;
+}
+
+.deathknight {
+  color: #C41F3B
+}
+.demon_hunter {
+  color: #A330C9
+}
+.druid {
+  color: #FF7D0A
+}
+.hunter {
+  color: #ABD473
+ }
+.mage {
+  color: #69CCF0
+}
+.monk {
+  color: #008467
+}
+.paladin {
+  color: #F58CBA
+}
+.priest {
+  color: #FFFFFF
+}
+.rogue {
+  color: #FFF569
+}
+.shaman {
+  color: #2459FF
+}
+.warlock {
+  color: #9482CA
+}
+.warrior {
+  color: #C79C6E
+}
+
+td {
+  text-align: left;
+  vertical-align: middle;
+}
+
+td > * {
+  vertical-align: middle;
+  margin: 2px;
+}
+
+td > img {
+  margin: 2px;
+}
+
+footer {
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+footer ul.quicklinks {
+  font-size: 90%;
+  line-height: 40px;
+  margin-bottom: 0;
+  text-transform: none;
+}
+
+ul.social-buttons {
+  margin-bottom: 0;
+}
+
+ul.social-buttons li a {
+  font-size: 20px;
+  line-height: 40px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #dadee8;
+  border-radius: 15%;
+  outline: none;
+  background-color: #35405d;
+}
+
+ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
+  background-color: #697490;
+}
+
+footer .copyright {
+  color: #6f7c9c;
+}
+
+.references > a{
+  font-size: 90%;
+  color: #404c6d;
+  line-height: 25px;
+}
+
+.close-button {
+  width: 90px;
+}
+
+.responsive-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.responsive-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.recruitment {
+  background-color: #131825;
+  text-align: left;
+  margin-bottom: 5px;
+  position: relative;
+  text-transform: uppercase;
+  line-height: 30px;
+  padding-right: 8px;
+}
+
+.recruitment img {
+  width: 30px;
+  height: 30px;
+  text-align: right;
+  opacity: 0.2;
+  filter: grayscale(100%);
+}
+.recruitment img.needed {
+  opacity: 1;
+  filter: grayscale(0%);
+  border: 1px solid #3e4a6a;
+}
+
+.recruitment-box {
+  margin: 4px;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+  background: #131825;
+  border: 2px solid #3e4a6a;
+}
+
+
+.card {
+  background-color: #3e4a6a;
+}
+
+.card .btn-link {
+  font-weight: 400;
+  color: #dadee8;
+  font-family: 'Oswald', sans-serif;
+}
+
+.card-header {
+  background-color: rgb(35, 42, 63);
+}
+
+.card-body {
+  background-color: #1d24386e;
+}
+
+.progress-row {
+  line-height: 50px;
+  padding: 5px;
+}
+
