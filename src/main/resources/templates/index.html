@@ -1,1399 +1,621 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <link rel="stylesheet" type="text/css" href="src/main/resources/static/css/style.css"/>
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="src/main/resources/static/css/style.css"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/discord-widget/latest/discord-widget.min.js"></script>
-  <script src="js/main.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" type="text/css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" type="text/css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,600,700" type="text/css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700" type="text/css" rel="stylesheet"/>
-  <link rel="stylesheet" href="/css/modal.css"/>
-  <link rel="stylesheet" href="/css/discord.css"/>
-  <link rel="stylesheet" href="/css/style.css"/>
-  <link rel="icon" href="/images/favicon-32x32.png" type="image/png"/>
-  <title>Pwny Express - Arthas</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/discord-widget/latest/discord-widget.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" type="text/css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" type="text/css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,600,700" type="text/css"
+          rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/modal.css"/>
+    <link rel="stylesheet" href="/css/discord.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="icon" href="/images/favicon-32x32.png" type="image/png"/>
+    <title>Pwny Express - Arthas</title>
 
-  <style>
+    <style>
 
-  </style>
+    </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <div class="navbar-brand">
-      <img src="/images/tabard.png" width="42"/>
-      <a id="mainheaderlink" class="navbar-brand" href="#">Pwny Express</a>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div class="container">
+        <div class="navbar-brand">
+            <img src="/images/tabard.png" width="42"/>
+            <a id="mainheaderlink" class="navbar-brand" href="#">Pwny Express</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-      <ul id="menuList" class="navbar-nav mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a id="newslink" class="nav-link" href="#">NEWS</a>
-        </li>
-        <li class="nav-item">
-          <a id="sociallink" class="nav-link" href="#">SOCIAL</a>
-        </li>
-        <li class="nav-item">
-          <a id="progresslink" class="nav-link" href="#">PROGRESS</a>
-        </li>
-        <li class="nav-item">
-          <a id="joinlink" class="nav-link" href="#">JOIN</a>
-        </li>
-      </ul>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
+            <ul id="menuList" class="navbar-nav mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a id="newslink" class="nav-link" href="#">NEWS</a>
+                </li>
+                <li class="nav-item">
+                    <a id="sociallink" class="nav-link" href="#">SOCIAL</a>
+                </li>
+                <li class="nav-item">
+                    <a id="progresslink" class="nav-link" href="#">PROGRESS</a>
+                </li>
+                <li class="nav-item">
+                    <a id="joinlink" class="nav-link" href="#">JOIN</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
 
 <header id="mainheader">
-  <div class="row">
-    <div class="col-lg-8 mx-auto text-center">
-      <h1>PWNY EXPRESS</h1>
-      <hr/>
-      <h2>World of Warcraft Gilde - Arthas EU</h2>
-      <p class="text-faded mb-4">Pure Pwnage since Oct 12, 2015</p>
+    <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+            <h1>PWNY EXPRESS</h1>
+            <hr/>
+            <h2>World of Warcraft Gilde - Arthas EU</h2>
+            <p class="text-faded mb-4">Pure Pwnage since Oct 12, 2015</p>
+        </div>
     </div>
-  </div>
 </header>
 
 
 <section id="news">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 mx-auto text-center">
-        <h2>NEWS</h2>
-        <hr/>
-
+    <div class="container">
         <div class="row">
+            <div class="col-lg-12 mx-auto text-center">
+                <h2>NEWS</h2>
+                <hr/>
 
-          <div class="col-md-4 col-sm-6 news-item">
-            <div class="news-item-container">
-              <a class="news-link" data-toggle="modal" href="#newsModal5">
-                <div class="news-hover">
-                  <div class="news-hover-content">
-                    <i class="fa fa-plus fa-3x"></i>
-                  </div>
-                </div>
-                <img class="img-fluid" src="/images/aggramar.png" alt=""/>
-              </a>
-              <div class="news-caption">
-                <h4>Aggramar</h4>
-                <p class="text-muted">mythisch</p>
-              </div>
-            </div>
-          </div>
+                <div class="row">
 
-          <div class="col-md-4 col-sm-6 news-item">
-            <div class="news-item-container">
-              <a class="news-link" data-toggle="modal" href="#newsModal4">
-                <div class="news-hover">
-                  <div class="news-hover-content">
-                    <i class="fa fa-plus fa-3x"></i>
-                  </div>
-                </div>
-                <img class="img-fluid" src="/images/shivarra.png" alt=""/>
-              </a>
-              <div class="news-caption">
-                <h4>Coven of Shivarra</h4>
-                <p class="text-muted">mythisch</p>
-              </div>
-            </div>
-          </div>
+                    <div class="col-md-4 col-sm-6 news-item">
+                        <div class="news-item-container">
+                            <a class="news-link" data-toggle="modal" href="#aggramar">
+                                <div class="news-hover">
+                                    <div class="news-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img class="img-fluid" src="/images/aggramar.png" alt=""/>
+                            </a>
+                            <div class="news-caption">
+                                <h4>Aggramar</h4>
+                                <p class="text-muted">mythisch</p>
+                            </div>
+                        </div>
+                    </div>
 
-          <div class="col-md-4 col-sm-6 news-item">
-            <div class="news-item-container">
-              <a class="news-link" data-toggle="modal" href="#newsModal3">
-                <div class="news-hover">
-                  <div class="news-hover-content">
-                    <i class="fa fa-plus fa-3x"></i>
-                  </div>
-                </div>
-                <img class="img-fluid" src="/images/varimathras.png" alt=""/>
-              </a>
-              <div class="news-caption">
-                <h4>Varimathras</h4>
-                <p class="text-muted">mythisch</p>
-              </div>
-            </div>
-          </div>
+                    <div class="col-md-4 col-sm-6 news-item">
+                        <div class="news-item-container">
+                            <a class="news-link" data-toggle="modal" href="#coven">
+                                <div class="news-hover">
+                                    <div class="news-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img class="img-fluid" src="/images/shivarra.png" alt=""/>
+                            </a>
+                            <div class="news-caption">
+                                <h4>Coven of Shivarra</h4>
+                                <p class="text-muted">mythisch</p>
+                            </div>
+                        </div>
+                    </div>
 
-          <div class="col-md-4 col-sm-6 news-item">
-            <div class="news-item-container">
-              <a class="news-link" data-toggle="modal" href="#newsModal1">
-                <div class="news-hover">
-                  <div class="news-hover-content">
-                    <i class="fa fa-plus fa-3x"></i>
-                  </div>
-                </div>
-                <img class="img-fluid" src="/images/kingaroth.png" alt=""/>
-              </a>
-              <div class="news-caption">
-                <h4>Kin'garoth</h4>
-                <p class="text-muted">mythisch</p>
-              </div>
-            </div>
-          </div>
+                    <div class="col-md-4 col-sm-6 news-item">
+                        <div class="news-item-container">
+                            <a class="news-link" data-toggle="modal" href="#varimathras">
+                                <div class="news-hover">
+                                    <div class="news-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img class="img-fluid" src="/images/varimathras.png" alt=""/>
+                            </a>
+                            <div class="news-caption">
+                                <h4>Varimathras</h4>
+                                <p class="text-muted">mythisch</p>
+                            </div>
+                        </div>
+                    </div>
 
-          <div class="col-md-4 col-sm-6 news-item">
-            <div class="news-item-container">
-              <a class="news-link" data-toggle="modal" href="#newsModal2">
-                <div class="news-hover">
-                  <div class="news-hover-content">
-                    <i class="fa fa-plus fa-3x"></i>
-                  </div>
-                </div>
-                <img class="img-fluid" src="/images/tabard_main.png" alt=""/>
-              </a>
-              <div class="news-caption">
-                <h4>Video Archiv</h4>
-                <p class="text-muted">legacy pwnage</p>
-              </div>
-            </div>
-          </div>
+                    <div class="col-md-4 col-sm-6 news-item">
+                        <div class="news-item-container">
+                            <a class="news-link" data-toggle="modal" href="#kingaroth">
+                                <div class="news-hover">
+                                    <div class="news-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img class="img-fluid" src="/images/kingaroth.png" alt=""/>
+                            </a>
+                            <div class="news-caption">
+                                <h4>Kin'garoth</h4>
+                                <p class="text-muted">mythisch</p>
+                            </div>
+                        </div>
+                    </div>
 
-          <!--
-          <div class="col-md-4 col-sm-6 news-item">
-            <div class="news-item-container">
-              <a class="news-link" data-toggle="modal" href="#newsModal3">
-                <div class="news-hover">
-                  <div class="news-hover-content">
-                    <i class="fa fa-plus fa-3x"></i>
-                  </div>
+                    <div class="col-md-4 col-sm-6 news-item">
+                        <div class="news-item-container">
+                            <a class="news-link" data-toggle="modal" href="#archive">
+                                <div class="news-hover">
+                                    <div class="news-hover-content">
+                                        <i class="fa fa-plus fa-3x"></i>
+                                    </div>
+                                </div>
+                                <img class="img-fluid" src="/images/tabard_main.png" alt=""/>
+                            </a>
+                            <div class="news-caption">
+                                <h4>Video Archiv</h4>
+                                <p class="text-muted">legacy pwnage</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <img class="img-fluid" src="img/news/03-thumbnail.jpg" alt="" />
-              </a>
-              <div class="news-caption">
-                <h4>Finish</h4>
-                <p class="text-muted">Identity</p>
-              </div>
             </div>
-          </div>
-          -->
         </div>
-      </div>
     </div>
-  </div>
 
 </section>
 
 
 <section id="social">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 mx-auto text-center">
-        <h2>SOCIAL</h2>
-        <hr/>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mx-auto text-center">
+                <h2>SOCIAL</h2>
+                <hr/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-7 mx-auto text-left">
+                <span class="rogue name">Noggerine</span>
+                <br/>
+                <div class="responsive-video">
+                    <iframe id="twitch1" src="http://player.twitch.tv/?channel=vonnogger&amp;autoplay=false"
+                            height="560"
+                            width="315"
+                            frameborder="0"
+                            scrolling="no"
+                            allowfullscreen="true">
+                    </iframe>
+                </div>
+
+                <br/>
+                <br/>
+
+                <span class="paladin name">Sillona</span>
+                <br/>
+                <div class="responsive-video">
+                    <iframe id="twitch" src="http://player.twitch.tv/?video=225799079&amp;autoplay=false"
+                            height="560"
+                            width="315"
+                            frameborder="0"
+                            scrolling="no"
+                            allowfullscreen="true">
+                    </iframe>
+                </div>
+
+                <br/>
+                <br/>
+
+                <span class="priest name">Vastosaurus</span>
+                <br/>
+                <div class="responsive-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/prLJODtbD9Y" frameborder="0"
+                            allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
+                </div>
+                <br/>
+            </div>
+            <div class="col-lg-1 mx-auto text-center">
+            </div>
+            <div class="col-lg-3 mx-auto text-center">
+                <div class="discord-widget"></div>
+            </div>
+        </div>
     </div>
-    <div class="row">
-      <div class="col-lg-7 mx-auto text-left">
-        <span class="rogue name">Noggerine</span>
-        <br/>
-        <div class="responsive-video">
-          <iframe id="twitch1" src="http://player.twitch.tv/?channel=vonnogger&amp;autoplay=false"
-                  height="560"
-                  width="315"
-                  frameborder="0"
-                  scrolling="no"
-                  allowfullscreen="true">
-          </iframe>
-        </div>
-
-        <br/>
-        <br/>
-
-        <span class="paladin name">Sillona</span>
-        <br/>
-        <div class="responsive-video">
-          <iframe id="twitch" src="http://player.twitch.tv/?video=225799079&amp;autoplay=false"
-                  height="560"
-                  width="315"
-                  frameborder="0"
-                  scrolling="no"
-                  allowfullscreen="true">
-          </iframe>
-        </div>
-
-        <br/>
-        <br/>
-
-        <span class="priest name">Vastosaurus</span>
-        <br/>
-        <div class="responsive-video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/prLJODtbD9Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
-        </div>
-        <br/>
-      </div>
-      <div class="col-lg-1 mx-auto text-center">
-      </div>
-      <div class="col-lg-3 mx-auto text-center">
-        <div class="discord-widget"></div>
-      </div>
-    </div>
-  </div>
 
 </section>
 
 
 <section id="progress">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 mx-auto text-center">
-        <h2>PROGRESS</h2>
-        <hr/>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mx-auto text-center">
+                <h2>PROGRESS</h2>
+                <hr/>
 
-        <div id="accordion">
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  <h5>Antorus, the Burning Throne</h5>
-                </button>
-              </h5>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-              <div class="card-body">
-                <div id="antorus-the-burning-throne" class="row">
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">Progress</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row bosses"></div>
-                  </div>
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">World</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row world">X</div>
-                  </div>
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">EU</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row eu">X</div>
-                  </div>
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">Realm</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row realm">X</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                    <h5>Antorus, the Burning Throne</h5>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                             data-parent="#accordion">
+                            <div class="card-body">
+                                <div id="antorus-the-burning-throne" class="row">
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">Progress</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row bosses"></div>
+                                    </div>
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">World</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row world">X</div>
+                                    </div>
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">EU</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row eu">X</div>
+                                    </div>
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">Realm</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row realm">X</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-          <div class="card">
-            <div class="card-header" id="headingTwo">
-              <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  <h5>Tomb of Sargeras</h5>
-                </button>
-              </h5>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-              <div class="card-body">
-                <div id="tomb-of-sargeras" class="row">
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">Progress</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row bosses"></div>
-                  </div>
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">World</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row world">X</div>
-                  </div>
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">EU</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row eu">X</div>
-                  </div>
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">Realm</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row realm">X</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                    <h5>Tomb of Sargeras</h5>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                <div id="tomb-of-sargeras" class="row">
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">Progress</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row bosses"></div>
+                                    </div>
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">World</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row world">X</div>
+                                    </div>
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">EU</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row eu">X</div>
+                                    </div>
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">Realm</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row realm">X</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-          <div class="card">
-            <div class="card-header" id="headingThree">
-              <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  <h5>The Nighthold</h5>
-                </button>
-              </h5>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-              <div class="card-body">
-                <div id="the-nighthold" class="row">
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">Progress</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row bosses"></div>
-                  </div>
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">World</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row world">X</div>
-                  </div>
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">EU</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row eu">X</div>
-                  </div>
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">Realm</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row realm">X</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                    <h5>The Nighthold</h5>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                             data-parent="#accordion">
+                            <div class="card-body">
+                                <div id="the-nighthold" class="row">
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">Progress</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row bosses"></div>
+                                    </div>
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">World</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row world">X</div>
+                                    </div>
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">EU</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row eu">X</div>
+                                    </div>
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">Realm</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row realm">X</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-          <div class="card">
-            <div class="card-header" id="headingFour">
-              <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  <h5>Trial of Valor</h5>
-                </button>
-              </h5>
-            </div>
-            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-              <div class="card-body">
-                <div id="trial-of-valor" class="row">
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">Progress</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row bosses"></div>
-                  </div>
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">World</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row world">X</div>
-                  </div>
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">EU</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row eu">X</div>
-                  </div>
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">Realm</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row realm">X</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                    <div class="card">
+                        <div class="card-header" id="headingFour">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <h5>Trial of Valor</h5>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                            <div class="card-body">
+                                <div id="trial-of-valor" class="row">
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">Progress</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row bosses"></div>
+                                    </div>
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">World</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row world">X</div>
+                                    </div>
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">EU</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row eu">X</div>
+                                    </div>
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">Realm</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row realm">X</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-          <div class="card">
-            <div class="card-header" id="headingFive">
-              <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  <h5>The Emerald Nightmare</h5>
-                </button>
-              </h5>
-            </div>
-            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-              <div class="card-body">
-                <div id="the-emerald-nightmare" class="row">
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">Progress</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row bosses"></div>
-                  </div>
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">World</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row world">X</div>
-                  </div>
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">EU</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row eu">X</div>
-                  </div>
-                  <div class="col-sm-3 mx-auto text-center progress-row">
-                    <div class="col-lg-12 mx-auto text-center progress-row">Realm</div>
-                    <div class="col-lg-12 mx-auto text-center progress-row realm">X</div>
-                  </div>
+                    <div class="card">
+                        <div class="card-header" id="headingFive">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <h5>The Emerald Nightmare</h5>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                            <div class="card-body">
+                                <div id="the-emerald-nightmare" class="row">
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">Progress</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row bosses"></div>
+                                    </div>
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">World</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row world">X</div>
+                                    </div>
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">EU</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row eu">X</div>
+                                    </div>
+                                    <div class="col-sm-3 mx-auto text-center progress-row">
+                                        <div class="col-lg-12 mx-auto text-center progress-row">Realm</div>
+                                        <div class="col-lg-12 mx-auto text-center progress-row realm">X</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
 
 <section id="join">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 mx-auto text-center">
-        <h2>JOIN</h2>
-        <hr/>
-      </div>
-      <div class="col-md-12 col-lg-8 mx-auto" style="text-align: justify;">
-        Unser Ziel ist es, den Mythic Content zu clearen und eine gute Rolle auf diesem Realmpool zu spielen.
-        Unsere Raidtage sind Mittwoch, (Freitag) und Sonntag jeweils 20-23 Uhr.
-        Wir legen sehr viel Wert auf ein ruhiges und lockeres Raidklima. Wenn wir dein Interesse geweckt haben, schreibe ingame Xarvion, Oagoag, Çathrina, oder Noggerine an und wir vereinbaren einen Termin für ein Gespräch im Discord.
-      </div>
-      <!-- <div class="col-md-12 col-lg-1 mx-auto text-center"></div> -->
-
-      <div class="col-md-12 col-lg-4 mx-auto text-center">
-        <div class="recruitment-box">
-          <div class="row">
-
-            <div class="col-lg-6 recruitment deathknight name">Deathknight</div>
-            <div class="col-lg-6 recruitment text-right">
-              <img class="" border="0" src="/images/classes/DeathKnight-Blood.jpg" title="Blood"/>
-              <img class="" border="0" src="/images/classes/DeathKnight-Frost.jpg" title="Frost"/>
-              <img class="" border="0" src="/images/classes/DeathKnight-Unholy.jpg" title="Unholy"/>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mx-auto text-center">
+                <h2>JOIN</h2>
+                <hr/>
             </div>
-
-            <div class="col-lg-6 recruitment demon_hunter name">Demon Hunter</div>
-            <div class="col-lg-6 recruitment text-right">
-              <img class="" border="0" src="/images/classes/DemonHunter-Havoc.jpg" title="Havoc"/>
-              <img class="" border="0" src="/images/classes/DemonHunter-Vengeance.jpg" title="Vengeance"/>
+            <div class="col-md-12 col-lg-8 mx-auto" style="text-align: justify;">
+                Unser Ziel ist es, den Mythic Content zu clearen und eine gute Rolle auf diesem Realmpool zu spielen.
+                Unsere Raidtage sind Mittwoch, (Freitag) und Sonntag jeweils 20-23 Uhr.
+                Wir legen sehr viel Wert auf ein ruhiges und lockeres Raidklima. Wenn wir dein Interesse geweckt haben,
+                schreibe ingame Xarvion, Oagoag, Çathrina, oder Noggerine an und wir vereinbaren einen Termin für ein
+                Gespräch im Discord.
             </div>
+            <!-- <div class="col-md-12 col-lg-1 mx-auto text-center"></div> -->
 
-            <div class="col-lg-5 recruitment druid name">Druid</div>
-            <div class="col-lg-7 recruitment text-right">
-              <img class="" border="0" src="/images/classes/Druid-Balance.jpg" title="Balance"/>
-              <img class="" border="0" src="/images/classes/Druid-Feral.jpg" title="Feral"/>
-              <img class="" border="0" src="/images/classes/Druid-Guardian.jpg" title="Guardian"/>
-              <img class="" border="0" src="/images/classes/Druid-Restoration.jpg" title="Restoration"/>
+            <div class="col-md-12 col-lg-4 mx-auto text-center">
+                <div class="recruitment-box">
+                    <div class="row">
+
+                        <div class="col-lg-6 recruitment deathknight name">Deathknight</div>
+                        <div class="col-lg-6 recruitment text-right">
+                            <img class="" border="0" src="/images/classes/DeathKnight-Blood.jpg" title="Blood"/>
+                            <img class="" border="0" src="/images/classes/DeathKnight-Frost.jpg" title="Frost"/>
+                            <img class="" border="0" src="/images/classes/DeathKnight-Unholy.jpg" title="Unholy"/>
+                        </div>
+
+                        <div class="col-lg-6 recruitment demon_hunter name">Demon Hunter</div>
+                        <div class="col-lg-6 recruitment text-right">
+                            <img class="" border="0" src="/images/classes/DemonHunter-Havoc.jpg" title="Havoc"/>
+                            <img class="" border="0" src="/images/classes/DemonHunter-Vengeance.jpg" title="Vengeance"/>
+                        </div>
+
+                        <div class="col-lg-5 recruitment druid name">Druid</div>
+                        <div class="col-lg-7 recruitment text-right">
+                            <img class="" border="0" src="/images/classes/Druid-Balance.jpg" title="Balance"/>
+                            <img class="" border="0" src="/images/classes/Druid-Feral.jpg" title="Feral"/>
+                            <img class="" border="0" src="/images/classes/Druid-Guardian.jpg" title="Guardian"/>
+                            <img class="" border="0" src="/images/classes/Druid-Restoration.jpg" title="Restoration"/>
+                        </div>
+
+                        <div class="col-lg-5 recruitment hunter name">Hunter</div>
+                        <div class="col-lg-7 recruitment text-right">
+                            <img class="" border="0" src="/images/classes/Hunter-BeastMastery.jpg"
+                                 title="Beast Master"/>
+                            <img class="" border="0" src="/images/classes/Hunter-Marksmanship.jpg"
+                                 title="Marksmanship"/>
+                            <img class="" border="0" src="/images/classes/Hunter-Survival.jpg" title="Survival"/>
+                        </div>
+
+                        <div class="col-lg-5 recruitment mage name">Mage</div>
+                        <div class="col-lg-7 recruitment text-right">
+                            <img class="" border="0" src="/images/classes/Mage-Arcane.jpg" title="Arcane"/>
+                            <img class="" border="0" src="/images/classes/Mage-Fire.jpg" title="Fire"/>
+                            <img class="" border="0" src="/images/classes/Mage-Frost.jpg" title="Frost"/>
+                        </div>
+
+                        <div class="col-lg-5 recruitment monk name">Monk</div>
+                        <div class="col-lg-7 recruitment text-right">
+                            <img class="" border="0" src="/images/classes/Monk-Brewmaster.jpg" title="Brewmaster"/>
+                            <img class="needed" border="0" src="/images/classes/Monk-Mistweaver.jpg"
+                                 title="Mistweaver"/>
+                            <img class="needed" border="0" src="/images/classes/Monk-Windwalker.jpg"
+                                 title="Windwalker"/>
+                        </div>
+
+                        <div class="col-lg-5 recruitment paladin name">Paladin</div>
+                        <div class="col-lg-7 recruitment text-right">
+                            <img class="needed" border="0" src="/images/classes/Paladin-Holy.jpg" title="Holy"/>
+                            <img class="" border="0" src="/images/classes/Paladin-Protection.jpg" title="Protection"/>
+                            <img class="" border="0" src="/images/classes/Paladin-Retribution.jpg" title="Retribution"/>
+                        </div>
+
+                        <div class="col-lg-5 recruitment priest name">Priest</div>
+                        <div class="col-lg-7 recruitment text-right">
+                            <img class="needed" border="0" src="/images/classes/Priest-Discipline.jpg"
+                                 title="Discipline"/>
+                            <img class="needed" border="0" src="/images/classes/Priest-Holy.jpg" title="Holy"/>
+                            <img class="" border="0" src="/images/classes/Priest-Shadow.jpg" title="Shadow"/>
+                        </div>
+
+                        <div class="col-lg-5 recruitment rogue name">Rogue</div>
+                        <div class="col-lg-7 recruitment text-right">
+                            <img class="" border="0" src="/images/classes/Rogue-Assassination.jpg"
+                                 title="Assassination"/>
+                            <img class="" border="0" src="/images/classes/Rogue-Outlaw.jpg" title="Outlaw"/>
+                            <img class="" border="0" src="/images/classes/Rogue-Subtlety.jpg" title="Subtlety"/>
+                        </div>
+
+                        <div class="col-lg-5 recruitment shaman name">Shaman</div>
+                        <div class="col-lg-7 recruitment text-right">
+                            <img class="" border="0" src="/images/classes/Shaman-Elemental.jpg" title="Elemental"/>
+                            <img class="" border="0" src="/images/classes/Shaman-Enhancement.jpg" title="Enhancement"/>
+                            <img class="needed" border="0" src="/images/classes/Shaman-Restoration.jpg"
+                                 title="Restoration"/>
+                        </div>
+
+                        <div class="col-lg-5 recruitment warlock name">Warlock</div>
+                        <div class="col-lg-7 recruitment text-right">
+                            <img class="" border="0" src="/images/classes/Warlock-Affliction.jpg" title="Affliction"/>
+                            <img class="" border="0" src="/images/classes/Warlock-Demonology.jpg" title="Demonology"/>
+                            <img class="" border="0" src="/images/classes/Warlock-Destruction.jpg" title="Destruction"/>
+                        </div>
+
+                        <div class="col-lg-5 recruitment warrior name">Warrior</div>
+                        <div class="col-lg-7 recruitment text-right">
+                            <img class="" border="0" src="/images/classes/Warrior-Arms.jpg" title="Arms"/>
+                            <img class="" border="0" src="/images/classes/Warrior-Fury.jpg" title="Fury"/>
+                            <img class="" border="0" src="/images/classes/Warrior-Protection.jpg" title="Protection"/>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-
-            <div class="col-lg-5 recruitment hunter name">Hunter</div>
-            <div class="col-lg-7 recruitment text-right">
-              <img class="" border="0" src="/images/classes/Hunter-BeastMastery.jpg" title="Beast Master"/>
-              <img class="" border="0" src="/images/classes/Hunter-Marksmanship.jpg" title="Marksmanship"/>
-              <img class="" border="0" src="/images/classes/Hunter-Survival.jpg" title="Survival"/>
-            </div>
-
-            <div class="col-lg-5 recruitment mage name">Mage</div>
-            <div class="col-lg-7 recruitment text-right">
-              <img class="" border="0" src="/images/classes/Mage-Arcane.jpg" title="Arcane"/>
-              <img class="" border="0" src="/images/classes/Mage-Fire.jpg" title="Fire"/>
-              <img class="" border="0" src="/images/classes/Mage-Frost.jpg" title="Frost"/>
-            </div>
-
-            <div class="col-lg-5 recruitment monk name">Monk</div>
-            <div class="col-lg-7 recruitment text-right">
-              <img class="" border="0" src="/images/classes/Monk-Brewmaster.jpg" title="Brewmaster"/>
-              <img class="needed" border="0" src="/images/classes/Monk-Mistweaver.jpg" title="Mistweaver"/>
-              <img class="needed" border="0" src="/images/classes/Monk-Windwalker.jpg" title="Windwalker"/>
-            </div>
-
-            <div class="col-lg-5 recruitment paladin name">Paladin</div>
-            <div class="col-lg-7 recruitment text-right">
-              <img class="needed" border="0" src="/images/classes/Paladin-Holy.jpg" title="Holy"/>
-              <img class="" border="0" src="/images/classes/Paladin-Protection.jpg" title="Protection"/>
-              <img class="" border="0" src="/images/classes/Paladin-Retribution.jpg" title="Retribution"/>
-            </div>
-
-            <div class="col-lg-5 recruitment priest name">Priest</div>
-            <div class="col-lg-7 recruitment text-right">
-              <img class="needed" border="0" src="/images/classes/Priest-Discipline.jpg" title="Discipline"/>
-              <img class="needed" border="0" src="/images/classes/Priest-Holy.jpg" title="Holy"/>
-              <img class="" border="0" src="/images/classes/Priest-Shadow.jpg" title="Shadow"/>
-            </div>
-
-            <div class="col-lg-5 recruitment rogue name">Rogue</div>
-            <div class="col-lg-7 recruitment text-right">
-              <img class="" border="0" src="/images/classes/Rogue-Assassination.jpg" title="Assassination"/>
-              <img class="" border="0" src="/images/classes/Rogue-Outlaw.jpg" title="Outlaw"/>
-              <img class="" border="0" src="/images/classes/Rogue-Subtlety.jpg" title="Subtlety"/>
-            </div>
-
-            <div class="col-lg-5 recruitment shaman name">Shaman</div>
-            <div class="col-lg-7 recruitment text-right">
-              <img class="" border="0" src="/images/classes/Shaman-Elemental.jpg" title="Elemental"/>
-              <img class="" border="0" src="/images/classes/Shaman-Enhancement.jpg" title="Enhancement"/>
-              <img class="needed" border="0" src="/images/classes/Shaman-Restoration.jpg" title="Restoration"/>
-            </div>
-
-            <div class="col-lg-5 recruitment warlock name">Warlock</div>
-            <div class="col-lg-7 recruitment text-right">
-              <img class="" border="0" src="/images/classes/Warlock-Affliction.jpg" title="Affliction"/>
-              <img class="" border="0" src="/images/classes/Warlock-Demonology.jpg" title="Demonology"/>
-              <img class="" border="0" src="/images/classes/Warlock-Destruction.jpg" title="Destruction"/>
-            </div>
-
-            <div class="col-lg-5 recruitment warrior name">Warrior</div>
-            <div class="col-lg-7 recruitment text-right">
-              <img class="" border="0" src="/images/classes/Warrior-Arms.jpg" title="Arms"/>
-              <img class="" border="0" src="/images/classes/Warrior-Fury.jpg" title="Fury"/>
-              <img class="" border="0" src="/images/classes/Warrior-Protection.jpg" title="Protection"/>
-            </div>
-
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 
 </section>
 
 <footer id="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 text-center">
-        <ul class="list-inline quicklinks">
-          <li class="list-inline-item">
-            <span class="copyright">Copyright © pwny.eu 2018</span>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-4 text-center">
-        <ul class="list-inline social-buttons">
-          <li class="list-inline-item">
-            <a target="_blank" href="https://www.youtube.com/channel/UCqjYZDw4xzWIYjHzg2392Mg">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a target="_blank" href="https://www.twitch.tv/kernkow">
-              <i class="fab fa-twitch"></i>
-            </a>
-          </li>
-          <!--
-          <li class="list-inline-item">
-            <a target="_blank" href="#">
-              <i class="fab fa-discord"></i>
-            </a>
-          </li>
-          -->
-          <li class="list-inline-item">
-            <a href="mailto:pwny.express.arthas@gmail.com?subject=Pwny Express Website">
-              <i class="far fa-envelope"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-4 text-center">
-        <!--
-        <ul class="list-inline quicklinks">
-          <li class="list-inline-item">
-            <a href="#">Datenschutz</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">Impressum</a>
-          </li>
-        </ul>
-        -->
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 text-center">
+                <ul class="list-inline quicklinks">
+                    <li class="list-inline-item">
+                        <span class="copyright">Copyright © pwny.eu 2018</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 text-center">
+                <ul class="list-inline social-buttons">
+                    <li class="list-inline-item">
+                        <a target="_blank" href="https://www.youtube.com/channel/UCqjYZDw4xzWIYjHzg2392Mg">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a target="_blank" href="https://www.twitch.tv/kernkow">
+                            <i class="fab fa-twitch"></i>
+                        </a>
+                    </li>
+                    <!--
+                    <li class="list-inline-item">
+                      <a target="_blank" href="#">
+                        <i class="fab fa-discord"></i>
+                      </a>
+                    </li>
+                    -->
+                    <li class="list-inline-item">
+                        <a href="mailto:pwny.express.arthas@gmail.com?subject=Pwny Express Website">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 text-center">
+                <!--
+                <ul class="list-inline quicklinks">
+                  <li class="list-inline-item">
+                    <a href="#">Datenschutz</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#">Impressum</a>
+                  </li>
+                </ul>
+                -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mx-auto text-center references">
+                <br/>
+                <a target="_blank" href="https://www.blizzard.com/">blizzard.com</a>
+                <a target="_blank" href="https://raider.io/">raider.io</a>
+                <a target="_blank" href="https://www.warcraftlogs.com/">warcraftlogs.com</a>
+                <a target="_blank" href="https://wowanalyzer.com/">wowanalyzer.com</a>
+                <a target="_blank" href="http://www.wowhead.com/">wowhead.com</a>
+                <a target="_blank" href="https://www.wowprogress.com">wowprogress.com</a>
+            </div>
+        </div>
     </div>
-    <div class="row">
-      <div class="col-lg-12 mx-auto text-center references">
-        <br/>
-        <a target="_blank" href="https://www.blizzard.com/">blizzard.com</a>
-        <a target="_blank" href="https://raider.io/">raider.io</a>
-        <a target="_blank" href="https://www.warcraftlogs.com/">warcraftlogs.com</a>
-        <a target="_blank" href="https://wowanalyzer.com/">wowanalyzer.com</a>
-        <a target="_blank" href="http://www.wowhead.com/">wowhead.com</a>
-        <a target="_blank" href="https://www.wowprogress.com">wowprogress.com</a>
-      </div>
-    </div>
-  </div>
 
 </footer>
 
 
 <!-- Modal -->
-<div class="news-modal modal fade" id="newsModal5" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 mx-auto">
-            <div class="modal-body">
-              <h2 class="text-uppercase">Aggramar</h2>
-              <p class="item-intro text-muted">10/11 Mythisch</p>
+<div th:replace="news/aggramar"></div>
 
-              <img class="img-fluid d-block mx-auto" src="images/aggramar-guild.png" alt=""/>
+<div th:replace="news/coven"></div>
 
-              <br/>
-              <div class="responsive-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/yg1DEiwBM58" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
-              </div>
+<div th:replace="news/varimathras"></div>
 
-              <br/>
-              <br/>
+<div th:replace="news/kingaroth"></div>
 
-              <h3>Setup</h3>
-              <table style="margin: 0 auto;">
-                <tr>
-                  <td><span class="deathknight name">Zertox</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Zertox">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <td><span class="paladin name">Oagoag</span>
-                </td>
-                <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Oagoag">
-                  <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                </td>
-                <tr>
-                  <td><span class="deathknight name">Shengmìng</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/2-Shengmìng">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="druid name">Bartuck</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Bartuck">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="druid name">Improval</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Improval">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="paladin name">Sillona</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Sillona">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="rogue name">Dardeya</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Dardeya">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="shaman name">Woker</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Woker">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="warrior name">Blardo</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Blardo">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="warrior name">Landogar</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Landogar">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="druid name">Magdulu</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Magdulu">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="hunter name">Longpipe</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Longpipe">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="warlock name">Nylai</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Nylai">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="warlock name">Tilon</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Tilon">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="druid name">Anitarah</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Anitarah">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="hunter name">Shooterella</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Shooterella">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="paladin name">Talordius</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Talordius">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="priest name">Çirilla</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/10-Çirilla">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="rogue name">Noggerine</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Noggerine">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="shaman name">Omegalul</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/tYNnMjHVCv1Qfzmh/9-Mythic+Aggramar+-+Kill+(8:19)/Omegalul">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-              </table>
-
-              <ul class="list-inline text-muted">
-                <li>@ 21. März 2018</li>
-                <li>Sillona</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <button class="btn btn-primary close-button" data-dismiss="modal" type="button">
-          <i class="fa fa-times"></i>
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="news-modal modal fade" id="newsModal4" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 mx-auto">
-            <div class="modal-body">
-              <h2 class="text-uppercase">Coven of Shivarra</h2>
-              <p class="item-intro text-muted">9/11 Mythisch</p>
-
-              <img class="img-fluid d-block mx-auto" src="images/shivarra-guild1.png" alt=""/>
-
-              <br/>
-              <div class="responsive-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/bWIaspBMJyg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
-              </div>
-
-              <br/>
-              <br/>
-
-              <h3>Setup</h3>
-              <table style="margin: 0 auto;">
-                <tr>
-                  <td><span class="deathknight name">Zertox</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Zertox">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <td><span class="druid name">Stressfaktor</span>
-                </td>
-                <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Stressfaktor">
-                  <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                </td>
-                <tr>
-                  <td><span class="druid name">Magdulu</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Magdulu">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="druid name">Anitarah</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Anitarah">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="hunter name">Elfalas</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Elfalas">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="hunter name">Longpipe</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Longpipe">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="hunter name">Shooterella</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Shooterella">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="mage name">Quxlike</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Quxlike">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="mage name">Maevelyn</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Maevelyn">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="paladin name">Sillona</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Sillona">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="priests name">Mîtschl</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/20-Mîtschl">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="priests name">Indertat</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Indertat">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="priests name">Vastosaurus</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Vastosaurus">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="rogue name">Noggerine</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Noggerine">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="rogue name">Dardeya</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Dardeya">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="shaman name">Woker</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Woker">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="shaman name">Xarvion</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Xarvion">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="shaman name">Omegalul</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Omegalul">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="warlock name">Tilon</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Tilon">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="warlock name">Nylai</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/CVRbhjgDn2NW7J1t/16-Mythic+The+Coven+of+Shivarra+-+Kill+(7:44)/Nylai">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-              </table>
-
-              <ul class="list-inline text-muted">
-                <li>@ 11. Februar 2018</li>
-                <li>Sillona</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <button class="btn btn-primary close-button" data-dismiss="modal" type="button">
-          <i class="fa fa-times"></i>
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal -->
-<div class="news-modal modal fade" id="newsModal3" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 mx-auto">
-            <div class="modal-body">
-              <h2 class="text-uppercase">Varimathras</h2>
-              <p class="item-intro text-muted">8/11 Mythisch</p>
-
-              <img class="img-fluid d-block mx-auto" src="images/varimathras-guild1.png" alt=""/>
-
-
-              <br/>
-              <div class="responsive-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/1p7mmYR7HbE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
-              </div>
-
-              <br/>
-              <br/>
-
-              <h3>Setup</h3>
-              <table style="margin: 0 auto;">
-                <tr>
-                  <td><span class="deathknight name">Zertox</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Zertox">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <td><span class="demon_hunter name">Mæsa</span>
-                </td>
-                <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Mæsa">
-                  <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                </td>
-                <tr>
-                  <td><span class="druid name">Stressfaktor</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Stressfaktor">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="druid name">Anitarah</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Anitarah">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="hunter name">Shooterella</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Shooterella">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="mage name">Quxlike</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Quxlike">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="mage name">Maevelyn</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Maevelyn">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="monk name">Finàl</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Finàl">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="paladin name">Oagoag</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Oagoag">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="paladin name">Sillona</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Sillona">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="priests name">Vastosaurus</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Vastosaurus">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="rogue name">Noggerine</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Noggerine">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="rogue name">Dardeya</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Dardeya">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="shaman name">Woker</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Woker">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="shaman name">Xarvion</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Xarvion">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="shaman name">Omegalul</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Omegalul">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="warlock name">Nylai</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Nylai">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="warrior name">Landogar</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Landogar">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="warrior name">Blardo</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Blardo">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="warrior name">Slayt</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/JCf9mD4jgqMA31HF/33-Mythic+Varimathras+-+Kill+(4:11)/Slayt">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-              </table>
-
-              <ul class="list-inline text-muted">
-                <li>@ 5. Februar 2018</li>
-                <li>Sillona</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <button class="btn btn-primary close-button" data-dismiss="modal" type="button">
-          <i class="fa fa-times"></i>
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="news-modal modal fade" id="newsModal1" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="modal-body">
-              <h2 class="text-uppercase">Kin'garoth</h2>
-              <p class="item-intro text-muted">7/11 Mythisch</p>
-
-              <div class="responsive-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/fOHCQqKLp9s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
-              </div>
-
-              <br/>
-              <br/>
-
-              <h3>Setup</h3>
-              <table style="margin: 0 auto;">
-                <tr>
-                  <td><span class="deathknight name">Zertox</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Zertox">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <td><span class="demon_hunter name">Mæsa</span>
-                </td>
-                <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Mæsa">
-                  <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                </td>
-                <tr>
-                  <td><span class="druid name">Improval</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Improval">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="druid name">Magdulu</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Magdulu">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="druid name">Anitarah</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Anitarah">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="hunter name">Shooterella</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Shooterella">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="mage name">Maevelyn</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Maevelyn">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="paladin name">Nephylia</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Nephylia">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="paladin name">Oagoag</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Oagoag">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="paladin name">Sillona</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Sillona">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="priests name">Mîtschl</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Mîtschl">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="priests name">Vastosaurus</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Vastosaurus">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="rogue name">Noggerine</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Noggerine">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="rogue name">Dardeya</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Dardeya">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="shaman name">Woker</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Woker">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="shaman name">Xarvion</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Xarvion">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="shaman name">Omegalul</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Omegalul">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="warlock name">Nylai</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Nylai">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="warrior name">Blardo</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Blardo">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="warrior name">Slayt</span>
-                  </td>
-                  <td><a target="_blank" href="https://wowanalyzer.com/report/zvXKjpDbAW1ChJkP/14-Mythic+Kin'garoth+-+Kill+(7:59)/Slayt">
-                    <img border="0" src="/images/wowanalyzer.png" width="20" height="20"/></a>
-                  </td>
-                </tr>
-              </table>
-
-              <ul class="list-inline text-muted">
-                <li>@ 3. Februar 2018</li>
-                <li>Sillona</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <button class="btn btn-primary close-button" data-dismiss="modal" type="button">
-          <i class="fa fa-times"></i>
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 2 -->
-<div th:replace="news/news2"> content here </div>
-
-
-<!--
-<div class="news-modal modal fade" id="newsModal2" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="modal-body">
-              <h2 class="text-uppercase">Video Archiv</h2>
-              <p class="item-intro text-muted">Einige Videos aus alten Raids</p>
-
-              <div class="responsive-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Ut2_L1zvaaw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
-              </div>
-              <br/>
-              <div class="responsive-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/zrdHzT8x3z0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
-              </div>
-              <br/>
-              <div class="responsive-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/kNzTMAwMLEw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
-              </div>
-              <br/>
-              <div class="responsive-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/DWiaHEu4D4E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
-              </div>
-              <br/>
-              <div class="responsive-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/XNw1u6U2COg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
-              </div>
-              <br/>
-              <div class="responsive-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/UfPCmwiNjdM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
-              </div>
-              <ul class="list-inline">
-                <li>@ 3. Februar 2018</li>
-                <li>Sillona</li>
-              </ul>
-
-            </div>
-          </div>
-        </div>
-        <button class="btn btn-primary" data-dismiss="modal" type="button">
-          <i class="fa fa-times"></i>
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
--->
+<div th:replace="news/archive"></div>
 
 </body>
 </html>

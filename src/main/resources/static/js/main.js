@@ -12,12 +12,12 @@ $(function () {
     goToByScroll($(this).attr("id"));
   });
 
-  $('.news-modal').on('show.bs.modal', function(e) {
+  $('.news-modal').on('show.bs.modal', function() {
     $(".navbar").addClass("d-none");
-  })
-  $('.news-modal').on('hidden.bs.modal', function(e) {
+  });
+  $('.news-modal').on('hidden.bs.modal', function() {
     $(".navbar").removeClass("d-none");
-  })
+  });
 
   $('.nav-link').click(function() {
     $('.navbar-collapse').collapse('hide');
