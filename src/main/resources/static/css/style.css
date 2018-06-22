@@ -291,3 +291,51 @@ footer .copyright {
   padding: 5px;
 }
 
+#twitchbox {
+  /*padding: 4px;*/
+  display: flex;
+  border: 2px solid #3e4a6a;
+}
+
+.twitchbox-video {
+  flex-grow: 1;
+  align-self: auto;
+}
+
+.twitchbox-menu {
+  align-self: auto;
+  /*padding: 5px;*/
+  background-color: #131825;
+}
+
+.twitchbox-menu-item {
+  width: 120px;
+  margin-bottom: 5px;
+  padding: 8px 5px;
+  background-color: #0e0e1c;
+  border: 1px solid #1e2438;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.live-cursor {
+  cursor: pointer;
+}
+
+.live {
+  margin-top: 4px;
+  background-color: #a80000;
+  text-align: center;
+  width: 40px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 12px;
+}
+
+.offline {
+  margin-top: 4px;
+  background-color: #1c2333;
+  text-align: center;
+  width: 45px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 12px;
+}
+

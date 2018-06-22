@@ -198,63 +198,7 @@
   </div>
 </section>
 
-
-<section id="social">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 mx-auto text-center">
-        <h2>SOCIAL</h2>
-        <hr/>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-7 mx-auto text-left">
-        <span class="rogue name">Noggerine</span>
-        <br/>
-        <div class="responsive-video">
-          <iframe id="twitch1" src="http://player.twitch.tv/?channel=vonnogger&amp;autoplay=false"
-                  height="560"
-                  width="315"
-                  frameborder="0"
-                  scrolling="no"
-                  allowfullscreen="true">
-          </iframe>
-        </div>
-
-        <br/>
-        <br/>
-
-        <span class="paladin name">Sillona</span>
-        <br/>
-        <div class="responsive-video">
-          <iframe id="twitch" src="http://player.twitch.tv/?video=225799079&amp;autoplay=false"
-                  height="560"
-                  width="315"
-                  frameborder="0"
-                  scrolling="no"
-                  allowfullscreen="true">
-          </iframe>
-        </div>
-
-        <br/>
-        <br/>
-
-        <span class="priest name">Vastosaurus</span>
-        <br/>
-        <div class="responsive-video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/prLJODtbD9Y" frameborder="0"
-                  allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
-        </div>
-        <br/>
-      </div>
-      <div class="col-lg-1 mx-auto text-center">
-      </div>
-      <div class="col-lg-3 mx-auto text-center">
-        <div class="discord-widget"></div>
-      </div>
-    </div>
-  </div>
-</section>
+<div th:replace="social/social"></div>
 
 <div th:replace="progression/progression"></div>
 
