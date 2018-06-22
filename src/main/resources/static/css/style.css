@@ -67,11 +67,16 @@ section {
   background-color: #131825;
 }
 
-#join {
+#roster {
   background-color: #232a3f;
 }
+
+#join {
+  background-color: #131825;
+}
+
 footer {
-    background-color: #131825;
+    background-color: #232a3f;
 }
 
 .btn-primary {
@@ -228,7 +233,7 @@ footer .copyright {
 }
 
 .recruitment {
-  background-color: #131825;
+  /*background-color: #131825;*/
   text-align: left;
   margin-bottom: 5px;
   position: relative;
@@ -258,7 +263,7 @@ footer .copyright {
   position: relative;
   box-sizing: border-box;
   font-family: 'Roboto Condensed', sans-serif;
-  background: #131825;
+  background: #1d222f;
   border: 2px solid #3e4a6a;
 }
 

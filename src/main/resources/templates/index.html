@@ -1,428 +1,452 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" type="text/css" href="src/main/resources/static/css/style.css"/>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" type="text/css" href="src/main/resources/static/css/style.css"/>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/discord-widget/latest/discord-widget.min.js"></script>
-    <script src="js/main.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" type="text/css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" type="text/css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,600,700" type="text/css"
-          rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700" type="text/css" rel="stylesheet"/>
-    <link rel="stylesheet" href="/css/modal.css"/>
-    <link rel="stylesheet" href="/css/discord.css"/>
-    <link rel="stylesheet" href="/css/style.css"/>
-    <link rel="icon" href="/images/favicon-32x32.png" type="image/png"/>
-    <title>Pwny Express - Arthas</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/discord-widget/latest/discord-widget.min.js"></script>
+  <script src="js/main.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" type="text/css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" type="text/css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,600,700" type="text/css"
+        rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700" type="text/css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/modal.css"/>
+  <link rel="stylesheet" href="/css/discord.css"/>
+  <link rel="stylesheet" href="/css/style.css"/>
+  <link rel="icon" href="/images/favicon-32x32.png" type="image/png"/>
+  <title>Pwny Express - Arthas</title>
 
-    <style>
+  <style>
 
-    </style>
+  </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <div class="navbar-brand">
-            <img src="/images/tabard.png" width="42"/>
-            <a id="mainheaderlink" class="navbar-brand" href="#">Pwny Express</a>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-            <ul id="menuList" class="navbar-nav mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a id="newslink" class="nav-link" href="#">NEWS</a>
-                </li>
-                <li class="nav-item">
-                    <a id="sociallink" class="nav-link" href="#">SOCIAL</a>
-                </li>
-                <li class="nav-item">
-                    <a id="progresslink" class="nav-link" href="#">PROGRESS</a>
-                </li>
-                <li class="nav-item">
-                    <a id="joinlink" class="nav-link" href="#">JOIN</a>
-                </li>
-            </ul>
-        </div>
+  <div class="container">
+    <div class="navbar-brand">
+      <img src="/images/tabard.png" width="42"/>
+      <a id="mainheaderlink" class="navbar-brand" href="#">Pwny Express</a>
     </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
+      <ul id="menuList" class="navbar-nav mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a id="newslink" class="nav-link" href="#">NEWS</a>
+        </li>
+        <li class="nav-item">
+          <a id="sociallink" class="nav-link" href="#">SOCIAL</a>
+        </li>
+        <li class="nav-item">
+          <a id="progresslink" class="nav-link" href="#">PROGRESS</a>
+        </li>
+        <li class="nav-item">
+          <a id="rosterlink" class="nav-link" href="#">ROSTER</a>
+        </li>
+        <li class="nav-item">
+          <a id="joinlink" class="nav-link" href="#">JOIN</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
 
 
 <header id="mainheader">
-    <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-            <h1>PWNY EXPRESS</h1>
-            <hr/>
-            <h2>World of Warcraft Gilde - Arthas EU</h2>
-            <p class="text-faded mb-4">Pure Pwnage since Oct 12, 2015</p>
-        </div>
+  <div class="row">
+    <div class="col-lg-8 mx-auto text-center">
+      <h1>PWNY EXPRESS</h1>
+      <hr/>
+      <h2>World of Warcraft Gilde - Arthas EU</h2>
+      <p class="text-faded mb-4">Pure Pwnage since Oct 12, 2015</p>
     </div>
+  </div>
 </header>
 
 <section id="news">
-    <div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 mx-auto text-center">
+        <h2>NEWS</h2>
+        <hr/>
+
         <div class="row">
-            <div class="col-lg-12 mx-auto text-center">
-                <h2>NEWS</h2>
-                <hr/>
 
-                <div class="row">
-
-                    <div class="col-md-4 col-sm-6 news-item">
-                        <div class="news-item-container">
-                            <a class="news-link" data-toggle="modal" href="#aggramar">
-                                <div class="news-hover">
-                                    <div class="news-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img class="img-fluid" src="/images/aggramar.png" alt=""/>
-                            </a>
-                            <div class="news-caption">
-                                <h4>Aggramar</h4>
-                                <p class="text-muted">mythisch</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6 news-item">
-                        <div class="news-item-container">
-                            <a class="news-link" data-toggle="modal" href="#coven">
-                                <div class="news-hover">
-                                    <div class="news-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img class="img-fluid" src="/images/shivarra.png" alt=""/>
-                            </a>
-                            <div class="news-caption">
-                                <h4>Coven of Shivarra</h4>
-                                <p class="text-muted">mythisch</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6 news-item">
-                        <div class="news-item-container">
-                            <a class="news-link" data-toggle="modal" href="#varimathras">
-                                <div class="news-hover">
-                                    <div class="news-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img class="img-fluid" src="/images/varimathras.png" alt=""/>
-                            </a>
-                            <div class="news-caption">
-                                <h4>Varimathras</h4>
-                                <p class="text-muted">mythisch</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6 news-item">
-                        <div class="news-item-container">
-                            <a class="news-link" data-toggle="modal" href="#kingaroth">
-                                <div class="news-hover">
-                                    <div class="news-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img class="img-fluid" src="/images/kingaroth.png" alt=""/>
-                            </a>
-                            <div class="news-caption">
-                                <h4>Kin'garoth</h4>
-                                <p class="text-muted">mythisch</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6 news-item">
-                        <div class="news-item-container">
-                            <a class="news-link" data-toggle="modal" href="#archive">
-                                <div class="news-hover">
-                                    <div class="news-hover-content">
-                                        <i class="fa fa-plus fa-3x"></i>
-                                    </div>
-                                </div>
-                                <img class="img-fluid" src="/images/tabard_main.png" alt=""/>
-                            </a>
-                            <div class="news-caption">
-                                <h4>Video Archiv</h4>
-                                <p class="text-muted">legacy pwnage</p>
-                            </div>
-                        </div>
-                    </div>
+          <div class="col-md-4 col-sm-6 news-item">
+            <div class="news-item-container">
+              <a class="news-link" data-toggle="modal" href="#argus">
+                <div class="news-hover">
+                  <div class="news-hover-content">
+                    <i class="fa fa-plus fa-3x"></i>
+                  </div>
                 </div>
+                <img class="img-fluid" src="/images/argus.png" alt=""/>
+              </a>
+              <div class="news-caption">
+                <h4>Argus</h4>
+                <p class="text-muted">mythisch</p>
+              </div>
             </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 news-item">
+            <div class="news-item-container">
+              <a class="news-link" data-toggle="modal" href="#aggramar">
+                <div class="news-hover">
+                  <div class="news-hover-content">
+                    <i class="fa fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img class="img-fluid" src="/images/aggramar.png" alt=""/>
+              </a>
+              <div class="news-caption">
+                <h4>Aggramar</h4>
+                <p class="text-muted">mythisch</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 news-item">
+            <div class="news-item-container">
+              <a class="news-link" data-toggle="modal" href="#coven">
+                <div class="news-hover">
+                  <div class="news-hover-content">
+                    <i class="fa fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img class="img-fluid" src="/images/shivarra.png" alt=""/>
+              </a>
+              <div class="news-caption">
+                <h4>Coven of Shivarra</h4>
+                <p class="text-muted">mythisch</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 news-item">
+            <div class="news-item-container">
+              <a class="news-link" data-toggle="modal" href="#varimathras">
+                <div class="news-hover">
+                  <div class="news-hover-content">
+                    <i class="fa fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img class="img-fluid" src="/images/varimathras.png" alt=""/>
+              </a>
+              <div class="news-caption">
+                <h4>Varimathras</h4>
+                <p class="text-muted">mythisch</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 news-item">
+            <div class="news-item-container">
+              <a class="news-link" data-toggle="modal" href="#kingaroth">
+                <div class="news-hover">
+                  <div class="news-hover-content">
+                    <i class="fa fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img class="img-fluid" src="/images/kingaroth.png" alt=""/>
+              </a>
+              <div class="news-caption">
+                <h4>Kin'garoth</h4>
+                <p class="text-muted">mythisch</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 news-item">
+            <div class="news-item-container">
+              <a class="news-link" data-toggle="modal" href="#archive">
+                <div class="news-hover">
+                  <div class="news-hover-content">
+                    <i class="fa fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img class="img-fluid" src="/images/tabard_main.png" alt=""/>
+              </a>
+              <div class="news-caption">
+                <h4>Video Archiv</h4>
+                <p class="text-muted">legacy pwnage</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
 
 <section id="social">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 mx-auto text-center">
-                <h2>SOCIAL</h2>
-                <hr/>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-7 mx-auto text-left">
-                <span class="rogue name">Noggerine</span>
-                <br/>
-                <div class="responsive-video">
-                    <iframe id="twitch1" src="http://player.twitch.tv/?channel=vonnogger&amp;autoplay=false"
-                            height="560"
-                            width="315"
-                            frameborder="0"
-                            scrolling="no"
-                            allowfullscreen="true">
-                    </iframe>
-                </div>
-
-                <br/>
-                <br/>
-
-                <span class="paladin name">Sillona</span>
-                <br/>
-                <div class="responsive-video">
-                    <iframe id="twitch" src="http://player.twitch.tv/?video=225799079&amp;autoplay=false"
-                            height="560"
-                            width="315"
-                            frameborder="0"
-                            scrolling="no"
-                            allowfullscreen="true">
-                    </iframe>
-                </div>
-
-                <br/>
-                <br/>
-
-                <span class="priest name">Vastosaurus</span>
-                <br/>
-                <div class="responsive-video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/prLJODtbD9Y" frameborder="0"
-                            allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
-                </div>
-                <br/>
-            </div>
-            <div class="col-lg-1 mx-auto text-center">
-            </div>
-            <div class="col-lg-3 mx-auto text-center">
-                <div class="discord-widget"></div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 mx-auto text-center">
+        <h2>SOCIAL</h2>
+        <hr/>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-lg-7 mx-auto text-left">
+        <span class="rogue name">Noggerine</span>
+        <br/>
+        <div class="responsive-video">
+          <iframe id="twitch1" src="http://player.twitch.tv/?channel=vonnogger&amp;autoplay=false"
+                  height="560"
+                  width="315"
+                  frameborder="0"
+                  scrolling="no"
+                  allowfullscreen="true">
+          </iframe>
+        </div>
+
+        <br/>
+        <br/>
+
+        <span class="paladin name">Sillona</span>
+        <br/>
+        <div class="responsive-video">
+          <iframe id="twitch" src="http://player.twitch.tv/?video=225799079&amp;autoplay=false"
+                  height="560"
+                  width="315"
+                  frameborder="0"
+                  scrolling="no"
+                  allowfullscreen="true">
+          </iframe>
+        </div>
+
+        <br/>
+        <br/>
+
+        <span class="priest name">Vastosaurus</span>
+        <br/>
+        <div class="responsive-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/prLJODtbD9Y" frameborder="0"
+                  allow="autoplay; encrypted-media" allowfullscreen="true"></iframe>
+        </div>
+        <br/>
+      </div>
+      <div class="col-lg-1 mx-auto text-center">
+      </div>
+      <div class="col-lg-3 mx-auto text-center">
+        <div class="discord-widget"></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <div th:replace="progression/progression"></div>
 
+<div th:replace="roster/roster"></div>
+
 <section id="join">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 mx-auto text-center">
-                <h2>JOIN</h2>
-                <hr/>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 mx-auto text-center">
+        <h2>JOIN</h2>
+        <hr/>
+      </div>
+      <div class="col-md-12 col-lg-8 mx-auto" style="text-align: justify;">
+        Unser Ziel ist es, den Mythic Content zu clearen und eine gute Rolle auf diesem Realmpool zu spielen.
+        Unsere Raidtage sind Mittwoch, (Freitag) und Sonntag jeweils 20-23 Uhr.
+        Wir legen sehr viel Wert auf ein ruhiges und lockeres Raidklima. Wenn wir dein Interesse geweckt haben,
+        schreibe ingame Xarvion, Oagoag, Çathrina, oder Noggerine an und wir vereinbaren einen Termin für ein
+        Gespräch im Discord.
+      </div>
+      <!-- <div class="col-md-12 col-lg-1 mx-auto text-center"></div> -->
+
+      <div class="col-md-12 col-lg-4 mx-auto text-center">
+        <div class="recruitment-box">
+          <div class="row">
+
+            <div class="col-lg-6 recruitment deathknight name">Deathknight</div>
+            <div class="col-lg-6 recruitment text-right">
+              <img class="" border="0" src="/images/classes/DeathKnight-Blood.jpg" title="Blood"/>
+              <img class="" border="0" src="/images/classes/DeathKnight-Frost.jpg" title="Frost"/>
+              <img class="" border="0" src="/images/classes/DeathKnight-Unholy.jpg" title="Unholy"/>
             </div>
-            <div class="col-md-12 col-lg-8 mx-auto" style="text-align: justify;">
-                Unser Ziel ist es, den Mythic Content zu clearen und eine gute Rolle auf diesem Realmpool zu spielen.
-                Unsere Raidtage sind Mittwoch, (Freitag) und Sonntag jeweils 20-23 Uhr.
-                Wir legen sehr viel Wert auf ein ruhiges und lockeres Raidklima. Wenn wir dein Interesse geweckt haben,
-                schreibe ingame Xarvion, Oagoag, Çathrina, oder Noggerine an und wir vereinbaren einen Termin für ein
-                Gespräch im Discord.
+
+            <div class="col-lg-6 recruitment demon_hunter name">Demon Hunter</div>
+            <div class="col-lg-6 recruitment text-right">
+              <img class="" border="0" src="/images/classes/DemonHunter-Havoc.jpg" title="Havoc"/>
+              <img class="" border="0" src="/images/classes/DemonHunter-Vengeance.jpg" title="Vengeance"/>
             </div>
-            <!-- <div class="col-md-12 col-lg-1 mx-auto text-center"></div> -->
 
-            <div class="col-md-12 col-lg-4 mx-auto text-center">
-                <div class="recruitment-box">
-                    <div class="row">
-
-                        <div class="col-lg-6 recruitment deathknight name">Deathknight</div>
-                        <div class="col-lg-6 recruitment text-right">
-                            <img class="" border="0" src="/images/classes/DeathKnight-Blood.jpg" title="Blood"/>
-                            <img class="" border="0" src="/images/classes/DeathKnight-Frost.jpg" title="Frost"/>
-                            <img class="" border="0" src="/images/classes/DeathKnight-Unholy.jpg" title="Unholy"/>
-                        </div>
-
-                        <div class="col-lg-6 recruitment demon_hunter name">Demon Hunter</div>
-                        <div class="col-lg-6 recruitment text-right">
-                            <img class="" border="0" src="/images/classes/DemonHunter-Havoc.jpg" title="Havoc"/>
-                            <img class="" border="0" src="/images/classes/DemonHunter-Vengeance.jpg" title="Vengeance"/>
-                        </div>
-
-                        <div class="col-lg-5 recruitment druid name">Druid</div>
-                        <div class="col-lg-7 recruitment text-right">
-                            <img class="" border="0" src="/images/classes/Druid-Balance.jpg" title="Balance"/>
-                            <img class="" border="0" src="/images/classes/Druid-Feral.jpg" title="Feral"/>
-                            <img class="" border="0" src="/images/classes/Druid-Guardian.jpg" title="Guardian"/>
-                            <img class="" border="0" src="/images/classes/Druid-Restoration.jpg" title="Restoration"/>
-                        </div>
-
-                        <div class="col-lg-5 recruitment hunter name">Hunter</div>
-                        <div class="col-lg-7 recruitment text-right">
-                            <img class="" border="0" src="/images/classes/Hunter-BeastMastery.jpg"
-                                 title="Beast Master"/>
-                            <img class="" border="0" src="/images/classes/Hunter-Marksmanship.jpg"
-                                 title="Marksmanship"/>
-                            <img class="" border="0" src="/images/classes/Hunter-Survival.jpg" title="Survival"/>
-                        </div>
-
-                        <div class="col-lg-5 recruitment mage name">Mage</div>
-                        <div class="col-lg-7 recruitment text-right">
-                            <img class="" border="0" src="/images/classes/Mage-Arcane.jpg" title="Arcane"/>
-                            <img class="" border="0" src="/images/classes/Mage-Fire.jpg" title="Fire"/>
-                            <img class="" border="0" src="/images/classes/Mage-Frost.jpg" title="Frost"/>
-                        </div>
-
-                        <div class="col-lg-5 recruitment monk name">Monk</div>
-                        <div class="col-lg-7 recruitment text-right">
-                            <img class="" border="0" src="/images/classes/Monk-Brewmaster.jpg" title="Brewmaster"/>
-                            <img class="needed" border="0" src="/images/classes/Monk-Mistweaver.jpg"
-                                 title="Mistweaver"/>
-                            <img class="needed" border="0" src="/images/classes/Monk-Windwalker.jpg"
-                                 title="Windwalker"/>
-                        </div>
-
-                        <div class="col-lg-5 recruitment paladin name">Paladin</div>
-                        <div class="col-lg-7 recruitment text-right">
-                            <img class="needed" border="0" src="/images/classes/Paladin-Holy.jpg" title="Holy"/>
-                            <img class="" border="0" src="/images/classes/Paladin-Protection.jpg" title="Protection"/>
-                            <img class="" border="0" src="/images/classes/Paladin-Retribution.jpg" title="Retribution"/>
-                        </div>
-
-                        <div class="col-lg-5 recruitment priest name">Priest</div>
-                        <div class="col-lg-7 recruitment text-right">
-                            <img class="needed" border="0" src="/images/classes/Priest-Discipline.jpg"
-                                 title="Discipline"/>
-                            <img class="needed" border="0" src="/images/classes/Priest-Holy.jpg" title="Holy"/>
-                            <img class="" border="0" src="/images/classes/Priest-Shadow.jpg" title="Shadow"/>
-                        </div>
-
-                        <div class="col-lg-5 recruitment rogue name">Rogue</div>
-                        <div class="col-lg-7 recruitment text-right">
-                            <img class="" border="0" src="/images/classes/Rogue-Assassination.jpg"
-                                 title="Assassination"/>
-                            <img class="" border="0" src="/images/classes/Rogue-Outlaw.jpg" title="Outlaw"/>
-                            <img class="" border="0" src="/images/classes/Rogue-Subtlety.jpg" title="Subtlety"/>
-                        </div>
-
-                        <div class="col-lg-5 recruitment shaman name">Shaman</div>
-                        <div class="col-lg-7 recruitment text-right">
-                            <img class="" border="0" src="/images/classes/Shaman-Elemental.jpg" title="Elemental"/>
-                            <img class="" border="0" src="/images/classes/Shaman-Enhancement.jpg" title="Enhancement"/>
-                            <img class="needed" border="0" src="/images/classes/Shaman-Restoration.jpg"
-                                 title="Restoration"/>
-                        </div>
-
-                        <div class="col-lg-5 recruitment warlock name">Warlock</div>
-                        <div class="col-lg-7 recruitment text-right">
-                            <img class="" border="0" src="/images/classes/Warlock-Affliction.jpg" title="Affliction"/>
-                            <img class="" border="0" src="/images/classes/Warlock-Demonology.jpg" title="Demonology"/>
-                            <img class="" border="0" src="/images/classes/Warlock-Destruction.jpg" title="Destruction"/>
-                        </div>
-
-                        <div class="col-lg-5 recruitment warrior name">Warrior</div>
-                        <div class="col-lg-7 recruitment text-right">
-                            <img class="" border="0" src="/images/classes/Warrior-Arms.jpg" title="Arms"/>
-                            <img class="" border="0" src="/images/classes/Warrior-Fury.jpg" title="Fury"/>
-                            <img class="" border="0" src="/images/classes/Warrior-Protection.jpg" title="Protection"/>
-                        </div>
-
-                    </div>
-                </div>
+            <div class="col-lg-5 recruitment druid name">Druid</div>
+            <div class="col-lg-7 recruitment text-right">
+              <img class="" border="0" src="/images/classes/Druid-Balance.jpg" title="Balance"/>
+              <img class="" border="0" src="/images/classes/Druid-Feral.jpg" title="Feral"/>
+              <img class="" border="0" src="/images/classes/Druid-Guardian.jpg" title="Guardian"/>
+              <img class="" border="0" src="/images/classes/Druid-Restoration.jpg" title="Restoration"/>
             </div>
+
+            <div class="col-lg-5 recruitment hunter name">Hunter</div>
+            <div class="col-lg-7 recruitment text-right">
+              <img class="" border="0" src="/images/classes/Hunter-BeastMastery.jpg"
+                   title="Beast Master"/>
+              <img class="" border="0" src="/images/classes/Hunter-Marksmanship.jpg"
+                   title="Marksmanship"/>
+              <img class="" border="0" src="/images/classes/Hunter-Survival.jpg" title="Survival"/>
+            </div>
+
+            <div class="col-lg-5 recruitment mage name">Mage</div>
+            <div class="col-lg-7 recruitment text-right">
+              <img class="" border="0" src="/images/classes/Mage-Arcane.jpg" title="Arcane"/>
+              <img class="" border="0" src="/images/classes/Mage-Fire.jpg" title="Fire"/>
+              <img class="" border="0" src="/images/classes/Mage-Frost.jpg" title="Frost"/>
+            </div>
+
+            <div class="col-lg-5 recruitment monk name">Monk</div>
+            <div class="col-lg-7 recruitment text-right">
+              <img class="" border="0" src="/images/classes/Monk-Brewmaster.jpg" title="Brewmaster"/>
+              <img class="needed" border="0" src="/images/classes/Monk-Mistweaver.jpg"
+                   title="Mistweaver"/>
+              <img class="needed" border="0" src="/images/classes/Monk-Windwalker.jpg"
+                   title="Windwalker"/>
+            </div>
+
+            <div class="col-lg-5 recruitment paladin name">Paladin</div>
+            <div class="col-lg-7 recruitment text-right">
+              <img class="needed" border="0" src="/images/classes/Paladin-Holy.jpg" title="Holy"/>
+              <img class="" border="0" src="/images/classes/Paladin-Protection.jpg" title="Protection"/>
+              <img class="" border="0" src="/images/classes/Paladin-Retribution.jpg" title="Retribution"/>
+            </div>
+
+            <div class="col-lg-5 recruitment priest name">Priest</div>
+            <div class="col-lg-7 recruitment text-right">
+              <img class="needed" border="0" src="/images/classes/Priest-Discipline.jpg"
+                   title="Discipline"/>
+              <img class="needed" border="0" src="/images/classes/Priest-Holy.jpg" title="Holy"/>
+              <img class="" border="0" src="/images/classes/Priest-Shadow.jpg" title="Shadow"/>
+            </div>
+
+            <div class="col-lg-5 recruitment rogue name">Rogue</div>
+            <div class="col-lg-7 recruitment text-right">
+              <img class="" border="0" src="/images/classes/Rogue-Assassination.jpg"
+                   title="Assassination"/>
+              <img class="" border="0" src="/images/classes/Rogue-Outlaw.jpg" title="Outlaw"/>
+              <img class="" border="0" src="/images/classes/Rogue-Subtlety.jpg" title="Subtlety"/>
+            </div>
+
+            <div class="col-lg-5 recruitment shaman name">Shaman</div>
+            <div class="col-lg-7 recruitment text-right">
+              <img class="" border="0" src="/images/classes/Shaman-Elemental.jpg" title="Elemental"/>
+              <img class="" border="0" src="/images/classes/Shaman-Enhancement.jpg" title="Enhancement"/>
+              <img class="needed" border="0" src="/images/classes/Shaman-Restoration.jpg"
+                   title="Restoration"/>
+            </div>
+
+            <div class="col-lg-5 recruitment warlock name">Warlock</div>
+            <div class="col-lg-7 recruitment text-right">
+              <img class="" border="0" src="/images/classes/Warlock-Affliction.jpg" title="Affliction"/>
+              <img class="" border="0" src="/images/classes/Warlock-Demonology.jpg" title="Demonology"/>
+              <img class="" border="0" src="/images/classes/Warlock-Destruction.jpg" title="Destruction"/>
+            </div>
+
+            <div class="col-lg-5 recruitment warrior name">Warrior</div>
+            <div class="col-lg-7 recruitment text-right">
+              <img class="" border="0" src="/images/classes/Warrior-Arms.jpg" title="Arms"/>
+              <img class="" border="0" src="/images/classes/Warrior-Fury.jpg" title="Fury"/>
+              <img class="" border="0" src="/images/classes/Warrior-Protection.jpg" title="Protection"/>
+            </div>
+
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
 </section>
 
 <footer id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 text-center">
-                <ul class="list-inline quicklinks">
-                    <li class="list-inline-item">
-                        <span class="copyright">Copyright © pwny.eu 2018</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-4 text-center">
-                <ul class="list-inline social-buttons">
-                    <li class="list-inline-item">
-                        <a target="_blank" href="https://www.youtube.com/channel/UCqjYZDw4xzWIYjHzg2392Mg">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a target="_blank" href="https://www.twitch.tv/kernkow">
-                            <i class="fab fa-twitch"></i>
-                        </a>
-                    </li>
-                    <!--
-                    <li class="list-inline-item">
-                      <a target="_blank" href="#">
-                        <i class="fab fa-discord"></i>
-                      </a>
-                    </li>
-                    -->
-                    <li class="list-inline-item">
-                        <a href="mailto:pwny.express.arthas@gmail.com?subject=Pwny Express Website">
-                            <i class="far fa-envelope"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-4 text-center">
-                <!--
-                <ul class="list-inline quicklinks">
-                  <li class="list-inline-item">
-                    <a href="#">Datenschutz</a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#">Impressum</a>
-                  </li>
-                </ul>
-                -->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 mx-auto text-center references">
-                <br/>
-                <a target="_blank" href="https://www.blizzard.com/">blizzard.com</a>
-                <a target="_blank" href="https://raider.io/">raider.io</a>
-                <a target="_blank" href="https://www.warcraftlogs.com/">warcraftlogs.com</a>
-                <a target="_blank" href="https://wowanalyzer.com/">wowanalyzer.com</a>
-                <a target="_blank" href="http://www.wowhead.com/">wowhead.com</a>
-                <a target="_blank" href="https://www.wowprogress.com">wowprogress.com</a>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 text-center">
+        <ul class="list-inline quicklinks">
+          <li class="list-inline-item">
+            <span class="copyright">Copyright © pwny.eu 2018</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-4 text-center">
+        <ul class="list-inline social-buttons">
+          <li class="list-inline-item">
+            <a target="_blank" href="https://www.youtube.com/channel/UCqjYZDw4xzWIYjHzg2392Mg">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a target="_blank" href="https://www.twitch.tv/kernkow">
+              <i class="fab fa-twitch"></i>
+            </a>
+          </li>
+          <!--
+          <li class="list-inline-item">
+            <a target="_blank" href="#">
+              <i class="fab fa-discord"></i>
+            </a>
+          </li>
+          -->
+          <li class="list-inline-item">
+            <a href="mailto:pwny.express.arthas@gmail.com?subject=Pwny Express Website">
+              <i class="far fa-envelope"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-4 text-center">
+        <!--
+        <ul class="list-inline quicklinks">
+          <li class="list-inline-item">
+            <a href="#">Datenschutz</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Impressum</a>
+          </li>
+        </ul>
+        -->
+      </div>
     </div>
+    <div class="row">
+      <div class="col-lg-12 mx-auto text-center references">
+        <br/>
+        <a target="_blank" href="https://www.blizzard.com/">blizzard.com</a>
+        <a target="_blank" href="https://raider.io/">raider.io</a>
+        <a target="_blank" href="https://www.warcraftlogs.com/">warcraftlogs.com</a>
+        <a target="_blank" href="https://wowanalyzer.com/">wowanalyzer.com</a>
+        <a target="_blank" href="http://www.wowhead.com/">wowhead.com</a>
+        <a target="_blank" href="https://www.wowprogress.com">wowprogress.com</a>
+      </div>
+    </div>
+  </div>
 
 </footer>
 
 
 <!-- Modal -->
+<div th:replace="news/argus"></div>
+
 <div th:replace="news/aggramar"></div>
 
 <div th:replace="news/coven"></div>
